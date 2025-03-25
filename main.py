@@ -55,7 +55,6 @@ def display_order_summary(product_names, prices, quantities, customer_name,
     print("--------------------------------------------")
 
 def main():
-
     product_names, product_prices, product_quantities = get_order_details()
 
     customer_name, senior_id = get_customer_details()
