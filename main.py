@@ -43,8 +43,22 @@ def calculate_grand_total(product_prices, product_quantities, is_senior):
 
 # TODO(Serquina): Display the summary of order(s).
 
-def display_order_summary():
-    pass
+def display_order_summary(product_names, prices, quantities, customer_name, 
+                          senior_id, grand_total): 
+    print("\n-------------- Order Summary ---------------")
+    print("Items:")
+    print("--------------------------------------------")
+
+    for product_name, price, quantity in zip(product_names, prices, 
+                                             quantities): 
+        total = price * quantity
+        print(f"{product_name} {price} x {quantity} = {total}")
+    
+    print("--------------------------------------------")
+    print(f"Customer Name: {customer_name}")
+    print(f"Senior ID No.: {senior_id if senior_id else 'N/A'}") 
+    print(f"Grand Total: {grand_total}")
+    print("--------------------------------------------")
 
 #TODO(Bualat): Call the functions in the main function.
 
