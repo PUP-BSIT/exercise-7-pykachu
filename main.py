@@ -1,5 +1,3 @@
-# TODO(Salespara): Get the user inputs for the details of the order(s).
-
 def get_order_details():
     product_names = []
     product_prices = []
@@ -18,16 +16,12 @@ def get_order_details():
         
     return product_names, product_prices, product_quantities
 
-# TODO(Maestre): Get the user inputs for the details of the customer.
-
 def get_customer_details():
     customer_name = input("Enter customer name: ")
     senior_id = input("Enter senior ID no. (leave blank if not a senior "
     "citizen): ")
     
     return customer_name, senior_id
-
-# TODO(Besa): Calculate the grand total for the order(s).
 
 def calculate_grand_total(product_prices, product_quantities, is_senior):
     grand_total = 0
@@ -40,8 +34,6 @@ def calculate_grand_total(product_prices, product_quantities, is_senior):
         grand_total -= discount
     
     return grand_total
-
-# TODO(Serquina): Display the summary of order(s).
 
 def display_order_summary(product_names, prices, quantities, customer_name,
                           senior_id, grand_total): 
@@ -62,8 +54,6 @@ def display_order_summary(product_names, prices, quantities, customer_name,
     print(f"Grand Total: {grand_total}")
     print("--------------------------------------------")
 
-#TODO(Bualat): Call the functions in the main function.
-
 def main():
 
     product_names, product_prices, product_quantities = get_order_details()
@@ -78,5 +68,4 @@ def main():
     display_order_summary(product_names, product_prices, product_quantities, 
                           customer_name, senior_id, grand_total)
 
-if __name__ == "__main__":
-    main()
+main()
