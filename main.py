@@ -24,14 +24,25 @@ def get_customer_details():
     customer_name = input("Enter customer name: ")
     senior_id = input("Enter senior ID no. (leave blank if not a senior "
     "citizen): ")
+    
     return customer_name, senior_id
 
 # TODO(Besa): Calculate the grand total for the order(s).
 
-def calculate_grand_total():
-    pass
+def calculate_grand_total(product_prices, product_quantities, is_senior):
+    grand_total = 0
+
+    for price, quantity in zip(product_prices, product_quantities):
+        grand_total += price * quantity
+
+    if is_senior:
+        discount = grand_total * 0.10
+        grand_total -= discount
+    
+    return grand_total
 
 # TODO(Serquina): Display the summary of order(s).
+
 def display_order_summary():
     pass
 
