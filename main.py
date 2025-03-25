@@ -21,7 +21,10 @@ def get_order_details():
 # TODO(Maestre): Get the user inputs for the details of the customer.
 
 def get_customer_details():
-    pass
+    customer_name = input("Enter customer name: ")
+    senior_id = input("Enter senior ID no. (leave blank if not a senior "
+    "citizen): ")
+    return customer_name, senior_id
 
 # TODO(Besa): Calculate the grand total for the order(s).
 
