@@ -63,7 +63,18 @@ def display_order_summary(product_names, prices, quantities, customer_name,
 #TODO(Bualat): Call the functions in the main function.
 
 def main():
-    pass
+
+    product_names, product_prices, product_quantities = get_order_details()
+
+    customer_name, senior_id = get_customer_details()
+    
+    is_senior = bool(senior_id)  
+    
+    grand_total = calculate_grand_total(product_prices, product_quantities, 
+                                        is_senior)
+    
+    display_order_summary(product_names, product_prices, product_quantities, 
+                          customer_name, senior_id, grand_total)
 
 if __name__ == "__main__":
     main()
