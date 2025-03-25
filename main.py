@@ -32,8 +32,8 @@ def get_customer_details():
 def calculate_grand_total(product_prices, product_quantities, is_senior):
     grand_total = 0
 
-    for price, quantity in zip(product_prices, product_quantities):
-        grand_total += price * quantity
+    for i in range(len(product_prices)):
+        grand_total += product_prices[i] * product_quantities[i]
 
     if is_senior:
         discount = grand_total * 0.10
@@ -43,16 +43,18 @@ def calculate_grand_total(product_prices, product_quantities, is_senior):
 
 # TODO(Serquina): Display the summary of order(s).
 
-def display_order_summary(product_names, prices, quantities, customer_name, 
+def display_order_summary(product_names, prices, quantities, customer_name,
                           senior_id, grand_total): 
     print("\n-------------- Order Summary ---------------")
     print("Items:")
     print("--------------------------------------------")
 
-    for product_name, price, quantity in zip(product_names, prices, 
-                                             quantities): 
-        total = price * quantity
-        print(f"{product_name} {price} x {quantity} = {total}")
+    for i in range(len(product_names)):
+        product_name = product_names[i]
+        price = prices[i]
+        quantity = quantities[i]
+        total_price = price * quantity
+        print(f"{product_name} {price} x {quantity} = {total_price}")
     
     print("--------------------------------------------")
     print(f"Customer Name: {customer_name}")
